@@ -5,7 +5,7 @@ setup(
     version='0.1.0',
     author='Sunny Saxena',
     author_email='saxenasunny@hotmail.com',
-    description='This is my custom trade utility module',
+    description='This is my custom trade utility and db connection module',
     packages=find_packages(),
     classifiers=[
         'Programming Language :: Python :: 3',

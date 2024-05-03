@@ -1,3 +1,5 @@
+import numpy as np
+
 def minute_1_to_five5(df):
     # set timestamp as index
     df.set_index('timestamp', inplace=True)

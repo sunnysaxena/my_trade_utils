@@ -15,6 +15,7 @@ setup(
     python_requires='>=3.10',
     install_requires=[
         'pandas'
-    ]
+    ],
+    long_description=open('README.md', 'r').read()
 )
 

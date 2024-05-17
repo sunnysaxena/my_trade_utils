@@ -1,5 +1,6 @@
-This is my small trading utility modules
+# This is my small trading utility modules
 
-Install python package
+## Install Python package
+Run script:
 
-pip install git+https://github.com/sunnysaxena/trade_utils.git
+    pip install git+https://github.com/sunnysaxena/trade_utils.git

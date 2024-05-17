@@ -84,6 +84,22 @@ def delete_duplicate_rows(df, verbose=False):
 
     if verbose:
         print(duplicated_rows)
-
     return df
 
+def delete_duplicate_rows_subset(df, subset, verbose=False):
+    number = df.duplicated(subset=subset, keep=False).sum()
+
+    # check for duplicated indexes
+    duplicated_indexes = df.duplicated(keep=False, subset=subset)
+    duplicated_rows = df[duplicated_indexes]
+
+    # drop duplicated indexes
+    df = df[~df.duplicated(keep=False, subset=subset)]
+    df.drop_duplicates(inplace=True)
+
+    if verbose:
+        print(duplicated_rows)
+    return df
+
+def merge_df_left_timestamp(df1, df2):
+    return pd.merge(df1, df2, how='left', left_on="timestamp", right_on="timestamp")

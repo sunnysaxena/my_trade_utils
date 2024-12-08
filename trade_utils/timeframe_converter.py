@@ -5,7 +5,7 @@ def minute_1_to_five5(df):
     df.set_index('timestamp', inplace=True)
 
     # resample to 5 minutes intervals
-    return df.resample('5T ').agg({
+    return df.resample('5T').agg({
         'open': 'first',
         'high': 'max',
         'low': 'min',

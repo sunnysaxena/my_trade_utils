@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='trade_utils',
-    version='0.1.3',
+    version='0.1.4',
     author='Sunny Saxena',
     author_email='saxenasunny@hotmail.com',
     description='This is my custom trade utility and db connection module',

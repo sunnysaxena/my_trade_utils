@@ -4,29 +4,36 @@ import datetime
 import pandas as pd
 from datetime import datetime
 
-time_zone = 'Asia/Kolkata'
+TIME_ZONE = 'Asia/Kolkata'
+OPTION_PATH = 'data/options'
+BANKS_PATH = 'data/banks'
 
-option_symbols = {
+
+OPTION_SYMBOLS_FYERS = {
     'indiavix': 'NSE:INDIAVIX-INDEX',
-
     'nifty50': 'NSE:NIFTY50-INDEX',
-
     'niftybank': 'NSE:NIFTYBANK-INDEX',
-
-    'finnifty': 'NSE:FINNIFTY-INDEX'
+    'finnifty': 'NSE:FINNIFTY-INDEX',
+    'midnifty': 'NSE:MIDCPNIFTY-INDEX',
+    'sensex': 'BSE:SENSEX-INDEX',
+    'crude': 'MCX:CRUDEOIL25FEBFUT'
 }
 
-option_symbols_yahoo = {
+TABLE_NAMES = {
+    'nifty50_1m': 'nifty50_1m',
+    'nifty50_1d': 'nifty50_1d',
+    'sensex_1m': 'sensex_1m',
+    'sensex_1d': 'sensex_1d'
+}
+
+OPTION_SYMBOLS_YAHOO = {
     'indiavix': '^INDIAVIX',
-
     'nifty50': '^NSEI',
-
     'niftybank': '^NSEBANK',
-
     'finnifty': 'NIFTY_FIN_SERVICE.NS'
 }
 
-trend_types = [
+TREND_TYPES = [
     'Uptrend',
     'Downtrend',
     'Sideways',
@@ -38,21 +45,29 @@ trend_types = [
 ]
 
 
+
 def generate_dates(end='2023-09-30', periods=1095 + 366 + 365 + 365 + 80):
     df = pd.date_range(end=end, periods=periods).to_pydatetime().tolist()
     dates = [d.strftime("%Y-%m-%d") for d in df]
     return dates
 
 
-def epoc_to_timestamp(epoch_time):
+def epoc_to_timestamp_minute(epoch_time):
+    """
+        Usage:
+        # epoc to timestamp for minute interval
+    """
     if issubclass(type(epoch_time), list):
         return [datetime.fromtimestamp(ep_time).strftime('%Y-%m-%d %H:%M:%S') for ep_time in epoch_time]
     else:
         return datetime.fromtimestamp(epoch_time).strftime('%Y-%m-%d %H:%M:%S')
 
 
-def epoc_to_timestamp1(epoch_time):
-    print(epoch_time)
+def epoc_to_timestamp_day(epoch_time):
+    """
+        Usage:
+        # epoc to timestamp for 1 day interval
+    """
     if issubclass(type(epoch_time), list):
         return [datetime.fromtimestamp(ep_time).strftime('%Y-%m-%d') for ep_time in epoch_time]
     else:

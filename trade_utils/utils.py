@@ -15,8 +15,7 @@ OPTION_SYMBOLS_FYERS = {
     'niftybank': 'NSE:NIFTYBANK-INDEX',
     'finnifty': 'NSE:FINNIFTY-INDEX',
     'midnifty': 'NSE:MIDCPNIFTY-INDEX',
-    'sensex': 'BSE:SENSEX-INDEX',
-    'crude': 'MCX:CRUDEOIL25FEBFUT'
+    'sensex': 'BSE:SENSEX-INDEX'
 }
 
 TABLE_NAMES = {
@@ -43,7 +42,6 @@ TREND_TYPES = [
     'Random or Chaotic',
     'Range Bound'
 ]
-
 
 
 def generate_dates(end='2023-09-30', periods=1095 + 366 + 365 + 365 + 80):

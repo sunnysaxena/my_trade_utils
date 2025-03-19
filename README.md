@@ -3,4 +3,4 @@
 ## Install Python package
 Run script:
 
-    pip install git+https://github.com/sunnysaxena/my_trade_utils.git
+    pip install -U git+https://github.com/sunnysaxena/my_trade_utils.git
